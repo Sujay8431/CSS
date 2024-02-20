@@ -1,50 +1,107 @@
-<!-- 
-  TODO: Create a motivational post website.
-Style it how ever you like. 
-Look at the goal image for inspiration.
-But it must have the following features:
-1. The main h1 text should be using the Regular Libre Baskerville Font from Google Fonts:
-  https://fonts.google.com/specimen/Libre+Baskerville
-2. The text should be white and background black.
-3. Add your own image into the images folder inside assets. It should have a 5px white border.
-4. The text should be center aligned.
-5. Create a div to contain the h1, p and img elements. Adjust the margins so that the image and text are centered on the page. 
-  Hint: You horizontally center a div by giving it a width of 50% and a margin-left of 25%.
-  Hint: Set the image to have a width of 100% so it fills the div. 
-6. Read about the text-transform property on MDN docs to make the h1 uppercase with CSS.
-  https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform 
--->
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Motivational Speech</title>
-    <link rel="stylesheet" href="style.css" />
+    <title>Flexbox Pricing Table</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap"
       rel="stylesheet"
     />
+    <style>
+      body {
+        font-family: "Sono", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .pricing-container {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        top: 25vh;
+      }
+      .pricing-plan {
+        background-color: gainsboro;
+        margin: 0.5rem;
+        padding: 0.7rem;
+      }
+      .plan-title {
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 0.3rem;
+      }
+      .plan-price {
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+      }
+      .plan-features li {
+        list-style: none;
+        text-align: center;
+        padding: 0.4rem;
+      }
+      .pricing-plan button {
+        background-color: orange;
+        color: white;
+        border-style: none;
+        position: relative;
+        left: 45%;
+        height: 30px;
+        border-radius: 8%;
+      }
+      /* Hint: What can you do with a media query and flexbox? */
+      @media (max-width: 770px) {
+        .body {
+          margin: 0;
+          padding: 0;
+        }
+        .pricing-container {
+          flex-direction: column;
+          top: 0%;
+          align-items: center;
+        }
+        .plan-features {
+          text-align: center;
+        }
+        .pricing-plan {
+          width: 50%;
+        }
+      }
+    </style>
   </head>
+
   <body>
-    <div>
-      <img src="./assets/images/moti.png" alt="Mola" />
-      <h1 class=".libre-baskerville-regular">Motivation of the day</h1>
-      <p>Nodrole Dudirle Nodrole</p>
-      <p>9 - 10 gante ge manege hogtene le naan item kali madkondu nodrole</p>
-      <p>
-        Nan tara dudirle innu yest varsha anta maneli irtirle Ispittu goli
-        adkonta dudirle
-      </p>
-      <p>
-        Yen ee kaaladalli rokka ildale,2024 bantappa Inna yavaga shane aagtira
-        neevu
-      </p>
-      <p>Dudiri ad bidri ala hudgir jothe adu idu yella bidi dudirle firstu</p>
-      <p>Ond hesru madkoli appa ammange dud di ond hesru baratte</p>
-      <h2>Tata Bye Bye</h2>
+    <div class="pricing-container">
+      <div class="pricing-plan">
+        <div class="plan-title">Basic</div>
+        <div class="plan-price">$9.99/month</div>
+        <ul class="plan-features">
+          <li>✅ 10GB Storage</li>
+          <li>✅ 1 User</li>
+          <li>🚫 Support</li>
+        </ul>
+        <button class="plan-button">Sign Up</button>
+      </div>
+      <div class="pricing-plan">
+        <div class="plan-title">Standard</div>
+        <div class="plan-price">$19.99/month</div>
+        <ul class="plan-features">
+          <li>✅ 50GB Storage</li>
+          <li>✅ 5 Users</li>
+          <li>✅ Phone &amp; Email Support</li>
+        </ul>
+        <button class="plan-button">Sign Up</button>
+      </div>
+      <div class="pricing-plan">
+        <div class="plan-title">Premium</div>
+        <div class="plan-price">$49.99/month</div>
+        <ul class="plan-features">
+          <li>✅ 100GB Storage</li>
+          <li>✅ 10 Users</li>
+          <li>✅ 24/7 Support</li>
+        </ul>
+        <button class="plan-button">Sign Up</button>
+      </div>
     </div>
   </body>
 </html>
